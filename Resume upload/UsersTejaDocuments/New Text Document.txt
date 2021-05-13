@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title> New Profile</title>
+<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+	<style>
+	.bo {
+/*   background-color: #E0FFFF; */
+        font-size: 20px;
+        height: auto;
+        margin: 10px;
+        padding: 20px;
+        margin-left: 20%;
+        margin-right: 20%;
+        box-shadow: 5px 10px 5px #888888;
+        }
+	 body{
+         background-image: url("C:/Users/Training/Desktop/temp3.jpg");
+  background-color: #cccccc;
+  height: 800px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+        }
+        
+	</style>
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand">Portal</a>
+		<form class="navbar-form navbar-right" th:action="@{/logout}" method="post">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">logout</button>
+  </form>
+</nav>
+<div class="container">
+    <div align="center" class="bo">
+        <h1> RRF DASHBOARD</h1>
+        <br />
+        <form action="#" th:action="@{/save2}" th:object="${booking}"
+            method="post">
+ 
+            <table border="0" cellpadding="10" class="table table-hover">
+                 
+                 
+                  <tr>
+                    <td>NAME:</td>
+                    <td><input type="text" th:field="*{profile_Id}" /></td>
+                </tr>
+               
+                <tr>
+                    <td>SKILLS :</td>   
+              
+                    <td>
+                    <input type="checkbox" id="C" name="C" value="C"/>    
+                 <label>C</label> <br>    
+              <input type="checkbox" id="Java" name="Java" value="Java" checked=?yes?/>    
+                 <label>C++</label> <br>    
+              <input type="checkbox" id="Python" name="Python" value="Python"/>    
+                 <label>java</label> <br>  
+                   <!-- <input type="text" th:field="*{name}" /></td>-->
+                </tr>
+                <tr>
+                    <td>EXPERIENCE :</td>
+                    <td><input type="text" th:field="*{age}" /></td>
+                </tr> 
+               <!-- <tr>
+                    <td>STATUS</td>
+                    <td><input type="text" th:field="*{status}" /></td>
+                </tr> --> 
+                
+               <!-- <tr>
+                <td><label for="status">PROFICIENCY :</label></td>
+  <td><select th:field="*{status}">
+    <option value="Confirmed">1</option>
+    <option value="Confirmed">2</option>
+    <option value="Confirmed">3</option>
+    <option value="Confirmed">4</option>
+    <option value="Confirmed">5</option>
+  </select></td>
+           </tr>     -->
+                                        
+                <tr>
+                    <td colspan="2" align="center"><button type="submit">Save</button> </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+     </div>
+    <!-- <div align="right">
+         <form th:action="@{/price}" method="post">
+    <input type="submit" value="Price" />
+    </form>
+    </div> -->
+</body>
+</html>
